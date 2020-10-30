@@ -5,8 +5,8 @@ import (
 )
 
 // hello world
-type World struct {
-	Hello string `json:"hello"`
+type Hello struct {
+	Who string `json:"hello"`
 }
 
 // Defines values all entities should have.

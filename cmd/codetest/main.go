@@ -5,8 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/russellsimpkins/simple-api/cmd/codetest/apis"
 	"github.com/russellsimpkins/simple-api/cmd/codetest/config"
-	//	swaggerFiles "github.com/swaggo/files"
-	//	"github.com/swaggo/gin-swagger"
+	swaggerFiles "github.com/swaggo/files"
+	"github.com/swaggo/gin-swagger"
 )
 
 func main() {
