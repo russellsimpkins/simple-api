@@ -19,6 +19,12 @@ info:
 paths:
   /hello/{who}:
     get:
+      parameters:
+      - description: Who to say hello to.
+        in: path
+        name: who
+        required: true
+        type: string
       produces:
       - application/json
       responses:
@@ -26,5 +32,12 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/types.Hello'
+      security:
+      - ApiKeyAuth: []
       summary: Executes a simple hello world for demonstration purposes.
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

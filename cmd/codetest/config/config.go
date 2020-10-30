@@ -11,6 +11,7 @@ var Config appConfig
 type appConfig struct {
 	// Example Variable
 	ListenPort string
+	ApiKey     string
 }
 
 // LoadConfig loads config from files

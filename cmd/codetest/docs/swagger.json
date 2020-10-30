@@ -18,10 +18,24 @@
     "paths": {
         "/hello/{who}": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "produces": [
                     "application/json"
                 ],
                 "summary": "Executes a simple hello world for demonstration purposes.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Who to say hello to.",
+                        "name": "who",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -41,6 +55,13 @@
                     "type": "string"
                 }
             }
+        }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
         }
     }
 }

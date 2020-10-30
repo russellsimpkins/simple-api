@@ -34,10 +34,24 @@ var doc = `{
     "paths": {
         "/hello/{who}": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "produces": [
                     "application/json"
                 ],
                 "summary": "Executes a simple hello world for demonstration purposes.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Who to say hello to.",
+                        "name": "who",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -57,6 +71,13 @@ var doc = `{
                     "type": "string"
                 }
             }
+        }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
         }
     }
 }`

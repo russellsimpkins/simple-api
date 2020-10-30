@@ -1,12 +1,16 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/russellsimpkins/simple-api/cmd/codetest/apis"
 	"github.com/russellsimpkins/simple-api/cmd/codetest/config"
+	_ "github.com/russellsimpkins/simple-api/cmd/codetest/docs"
+	"github.com/russellsimpkins/simple-api/cmd/codetest/httputil"
 	swaggerFiles "github.com/swaggo/files"
 	"github.com/swaggo/gin-swagger"
+	"net/http"
 )
 
 // @title Simple Swagger API.
@@ -65,7 +69,7 @@ func auth() gin.HandlerFunc {
 			c.Abort()
 		}
 		if authHeader != config.Config.ApiKey {
-			httputil.NewError(c, http.StatusUnauthorized, fmt.Errorf("this user isn't authorized to this operation: api_key=%s", authHeader))
+			httputil.NewError(c, http.StatusUnauthorized, fmt.Errorf("this user isn't authorized to this operation: auth_key is: %s.", authHeader, config.Config.ApiKey))
 			c.Abort()
 		}
 		c.Next()

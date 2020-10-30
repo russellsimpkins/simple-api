@@ -10,7 +10,9 @@ import (
 // @Summary Executes a simple hello world for demonstration purposes.
 // @Produce json
 // @Success 200 {object} types.Hello
+// @Param who path string true "Who to say hello to."
 // @Router /hello/{who} [get]
+// @Security ApiKeyAuth
 func GetHello(c *gin.Context) {
 	who := c.Param("who")
 	w := types.Hello{Who: who}
