@@ -209,10 +209,13 @@ ci: $(BUILD_DIRS)
 $(BUILD_DIRS):
 	@mkdir -p $@
 
-clean: container-clean bin-clean
+clean: container-clean bin-clean emacs-clean
 
 container-clean:
 	rm -rf .container-* .dockerfile-* .push-*
 
 bin-clean:
 	rm -rf .go bin
+
+emacs-clean:
+	find . -type f -name *~ -exec rm {} \;
