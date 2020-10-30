@@ -1,0 +1,12 @@
+package apis
+
+import (
+	"log"
+	"net/http"
+	"strconv"
+	"types"
+)
+
+func GetHello(c *gin.Context) {
+
+}
