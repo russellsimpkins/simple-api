@@ -15,5 +15,5 @@ func TestLoadConfig(t *testing.T) {
 	if err := config.LoadConfig("/config"); err != nil {
 		assert.Error(t, err)
 	}
-	assert.Equal(t, "Dummy Value", config.Config.ConfigVar)
+	assert.Equal(t, "1234", config.Config.ListenPort)
 }

@@ -10,13 +10,13 @@ var Config appConfig
 
 type appConfig struct {
 	// Example Variable
-	ConfigVar string
+	ListenPort string
 }
 
 // LoadConfig loads config from files
 func LoadConfig(configPaths ...string) error {
 	v := viper.New()
-	v.SetConfigName("example")
+	v.SetConfigName("server")
 	v.SetConfigType("yaml")
 	v.SetEnvPrefix("codetest")
 	v.AutomaticEnv()
