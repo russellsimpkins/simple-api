@@ -22,7 +22,7 @@ import (
 // @contact.email russellsimpkins@gmail.com
 
 // @license.name MIT
-// @license.url https://github.com/MartinHeinz/go-project-blueprint/blob/master/LICENSE
+// @license.url https://github.com/russellsimpkins/simple-api/blob/master/LICENSE
 
 // @BasePath /api/v1
 
