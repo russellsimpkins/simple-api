@@ -1,0 +1,30 @@
+basePath: /api/v1
+definitions:
+  types.Hello:
+    properties:
+      hello:
+        type: string
+    type: object
+info:
+  contact:
+    email: russellsimpkins@gmail.com
+    name: API Support
+  description: Codetest API for Joe.
+  license:
+    name: MIT
+    url: https://github.com/MartinHeinz/go-project-blueprint/blob/master/LICENSE
+  termsOfService: http://swagger.io/terms
+  title: Simple Swagger API.
+  version: "1.0"
+paths:
+  /hello/{who}:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/types.Hello'
+      summary: Executes a simple hello world for demonstration purposes.
+swagger: "2.0"
