@@ -1,6 +1,6 @@
 module github.com/russellsimpkins/simple-api
 
-go 1.15.3
+go 1.15
 
 require (
 	github.com/spf13/viper v1.4.0
