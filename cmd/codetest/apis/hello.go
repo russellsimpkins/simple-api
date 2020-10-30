@@ -3,7 +3,6 @@ package apis
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/russellsimpkins/simple-api/cmd/codetest/types"
-
 	"net/http"
 )
 
