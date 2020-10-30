@@ -12,7 +12,7 @@ info:
   description: Codetest API for Joe.
   license:
     name: MIT
-    url: https://github.com/MartinHeinz/go-project-blueprint/blob/master/LICENSE
+    url: https://github.com/russellsimpkins/simple-api/blob/master/LICENSE
   termsOfService: http://swagger.io/terms
   title: Simple Swagger API.
   version: "1.0"

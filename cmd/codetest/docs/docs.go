@@ -25,7 +25,7 @@ var doc = `{
         },
         "license": {
             "name": "MIT",
-            "url": "https://github.com/MartinHeinz/go-project-blueprint/blob/master/LICENSE"
+            "url": "https://github.com/russellsimpkins/simple-api/blob/master/LICENSE"
         },
         "version": "{{.Version}}"
     },
