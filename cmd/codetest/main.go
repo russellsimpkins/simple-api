@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/russellsimpkins/simple-api/cmd/codtest/config"
+	"github.com/russellsimpkins/simple-api/cmd/codetest/config"
 )
 
 func main() {
