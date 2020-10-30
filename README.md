@@ -1,10 +1,7 @@
 # Simple API for a code test.
 
-
-### Setting Up
-- Replace All Occurrences of `martinheinz/go-project-blueprint` with your username repository name
-- Replace All Occurrences of `blueprint` with your desired image name
-
+Getting back into the flow writing APIs in golang. A special shout out to https://github.com/MartinHeinz/go-project-blueprint for
+a very nice project that helped move things along much faster.
 
 ### Adding New Libraries/Dependencies
 Don't forget to run this if you add new imports:
