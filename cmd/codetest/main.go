@@ -45,9 +45,25 @@ func main() {
 	// adds our apis.
 	v1 := r.Group("/api/v1")
 	{
+		v1.Use(auth())
 		v1.GET("/hello/:who", apis.GetHello)
 	}
 
 	// starts the service.
 	r.Run(fmt.Sprintf(":%v", config.Config.ListenPort))
+}
+
+func auth() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		authHeader := c.GetHeader("Authorization")
+		if len(authHeader) == 0 {
+			httputil.NewError(c, http.StatusUnauthorized, errors.New("Authorization is required Header"))
+			c.Abort()
+		}
+		if authHeader != config.Config.ApiKey {
+			httputil.NewError(c, http.StatusUnauthorized, fmt.Errorf("this user isn't authorized to this operation: api_key=%s", authHeader))
+			c.Abort()
+		}
+		c.Next()
+	}
 }
