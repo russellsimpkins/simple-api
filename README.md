@@ -10,7 +10,7 @@ go mod vendor
 ```
 
 ### Building/testing/running
-If you're on a mac, test with
+If you're on a mac, test and then build the container with the following:
 ```
 GOOS=linux GOARCH=amd64 make test
 GOOS=linux GOARCH=amd64 make container
