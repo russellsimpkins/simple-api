@@ -1,4 +1,5 @@
-FROM golang:1.15.3
+FROM golang:1.15.3-buster
+# FROM golang:1.12-alpine
 
 RUN apk add gcc g++
 
