@@ -21,6 +21,10 @@ import (
 // @license.url https://github.com/MartinHeinz/go-project-blueprint/blob/master/LICENSE
 
 // @BasePath /api/v1
+
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
 func main() {
 
 	// Loads the application configurations.
