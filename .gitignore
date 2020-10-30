@@ -1,1 +1,6 @@
 .go
+vendor
+.dockerfile-darwin_amd64
+.dockerfile-linux_amd64
+go.sum
+bin
