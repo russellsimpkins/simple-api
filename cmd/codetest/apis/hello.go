@@ -8,11 +8,11 @@ import (
 
 // GetHello godoc
 // @Summary Executes a simple hello world for demonstration purposes.
-// @Produce JSON
-// @Success 200 {object} types.World
+// @Produce json
+// @Success 200 {object} types.Hello
 // @Router /hello/{who} [get]
 func GetHello(c *gin.Context) {
 	who := c.Param("who")
-	w := types.World{Hello: who}
+	w := types.Hello{Who: who}
 	c.JSON(http.StatusOK, w)
 }

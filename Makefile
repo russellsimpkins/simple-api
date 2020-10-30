@@ -40,6 +40,10 @@ TEST_IMAGE ?= golang:1.15.3-buster
 # If you want to build all containers, see the 'all-container' rule.
 all: build
 
+# Generate swagger docs
+docs:
+	cd cmd/codetest && swag init
+
 # For the following OS/ARCH expansions, we transform OS/ARCH into OS_ARCH
 # because make pattern rules don't match with embedded '/' characters.
 

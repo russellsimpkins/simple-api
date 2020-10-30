@@ -9,15 +9,26 @@ import (
 	"github.com/swaggo/gin-swagger"
 )
 
+// @title Simple Swagger API.
+// @version 1.0
+// @description Codetest API for Joe.
+// @termsOfService http://swagger.io/terms
+
+// @contact.name API Support
+// @contact.email russellsimpkins@gmail.com
+
+// @license.name MIT
+// @license.url https://github.com/MartinHeinz/go-project-blueprint/blob/master/LICENSE
+
+// @BasePath /api/v1
 func main() {
-	// load application configurations
+
+	// Loads the application configurations.
 	if err := config.LoadConfig("./config"); err != nil {
 		panic(fmt.Errorf("invalid application configuration: %s", err))
 	}
 
-	// fmt.Println(config.Config.ConfigVar)
-
-	// Creates a router without any middleware by default
+	// Creates a router without any middleware by default.
 	r := gin.New()
 
 	// Global middleware
@@ -25,13 +36,18 @@ func main() {
 	// By default gin.DefaultWriter = os.Stdout
 	r.Use(gin.Logger())
 
-	// Recovery middleware recovers from any panics and writes a 500 if there was one.
+	// Recovers from any panics and writes a 500 if there was one.
 	r.Use(gin.Recovery())
 
+	// enables swagger.
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
+	// adds our apis.
 	v1 := r.Group("/api/v1")
 	{
 		v1.GET("/hello/:who", apis.GetHello)
 	}
 
+	// starts the service.
 	r.Run(fmt.Sprintf(":%v", config.Config.ListenPort))
 }
